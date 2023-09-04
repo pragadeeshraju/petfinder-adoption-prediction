@@ -12,7 +12,7 @@ df['Adopted'] = label_encoder.fit_transform(df['Adopted'])
 
 def load_model():
     model = xgb.XGBClassifier()
-    model.load_model("artifacts/model/xgboost_model.model")
+    model.load_model("../artifacts/model/xgboost_model.model")
     return model
 
 model = load_model()
@@ -33,5 +33,5 @@ pred = label_encoder.inverse_transform(predictions)
 df['Adopted_prediction'] = pred
 
 # Save the output to 'output/results.csv'
-output_file = 'output1/results.csv'
+output_file = '../output/results.csv'
 df.to_csv(output_file, index=False)

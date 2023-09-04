@@ -50,7 +50,7 @@ recall = recall_score(y_test, y_pred)
 # Log the metrics
 timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 log_file_name = f"log_{timestamp}.txt"
-log_directory = "artifacts/logs/"
+log_directory = "../artifacts/logs/"
 os.makedirs(log_directory, exist_ok=True)
 log_file_path = os.path.join(log_directory, log_file_name)
 
@@ -61,7 +61,7 @@ with open(log_file_path, "a") as log_file:
 print(log_message)
 
 # Save the trained model
-model_directory = "artifacts/model"
+model_directory = "../artifacts/model"
 os.makedirs(model_directory, exist_ok=True)
 model.save_model(os.path.join(model_directory, "xgboost_model.model"))
 
